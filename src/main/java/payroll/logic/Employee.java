@@ -16,7 +16,27 @@ public abstract class Employee{
 
    // abstract method overridden by concrete subclasses
     public abstract double earnings(); // no implementation here
+   public double taxes() {
+      double temp;
+      double temp2;
+      {
+         if (earnings() <= 400) {
+            return 0;
+         }
+         if (earnings() > 400 && earnings() <= 900) {
+            temp = (earnings() - 400) * 0.10;
+            return temp;
+         }
 
+         if (earnings() > 400 && earnings() > 900) {
+            temp = (earnings() - 400) ;
+            temp2 = temp * 0.10;
+            temp = (temp-500) * 0.20;
+            return temp + temp2;
+         }
+      }
+      return 0;
+   }
    // return String representation of Employee object
    public String toString(){
       return String.format( "%s %s\nsocial security number: %s \nearnings: %.2f ",

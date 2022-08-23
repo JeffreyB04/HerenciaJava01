@@ -6,7 +6,7 @@
 package payroll;
 
 import payroll.logic.*;
-
+//implementar comissionEmployee
 public class Application {
     public static void main(String[] args) { 
         Employee e;
@@ -24,11 +24,15 @@ public class Application {
         e = new HourlyEmployee("Maria","Mata","222",10,45);
         Service.agregar(e);
         double total=0.0;
+        double taxesT=0.0;
         for(Employee emp: Service.employees.values()){
             System.out.println("===========================");
             System.out.println(emp.toString()+"\n");
             total += emp.earnings();
+            taxesT += emp.taxes();
         }
+        System.out.println("TOTAL Taxes==> " + taxesT);
         System.out.println("TOTAL ==> " + total);
     }    
 }
+

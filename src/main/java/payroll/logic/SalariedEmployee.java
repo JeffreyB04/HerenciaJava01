@@ -15,14 +15,16 @@ public class SalariedEmployee extends Employee {
    // calculate earnings; implement interface Payable method that was
    // abstract in superclass Employee
    public double earnings() {
-      return getWeeklySalary();
-   } // end method getPaymentAmount
+         return getWeeklySalary();
+      } // end method getPaymentAmount
 
    // return String representation of SalariedEmployee object
    public String toString() {
       return String.format( "salaried employee: %s\n%s: $%,.2f", 
          super.toString(), "weekly salary", getWeeklySalary() );
    } // end method toString
+
+   //return "Nombre: " + nombre + "Salario: " + salario;
    
    // set salary
    public void setWeeklySalary( double salary ) {
